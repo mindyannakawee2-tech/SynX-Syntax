@@ -1,0 +1,40 @@
+{
+  "scopeName": "source.synx",
+  "name": "SynX",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-dash.synx", "match": "--.*$" },
+        {
+          "name": "comment.block.synx",
+          "begin": "--\\[\\[",
+          "end": "\\]\\]"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.synx",
+          "match": "\\b(set|work|import|export|if|else|while|for|in|and|or|not|true|false|nil)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.synx", "begin": "\"", "end": "\"" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.synx", "match": "\\b[0-9]+(\\.[0-9]+)?\\b" }
+      ]
+    }
+  }
+}

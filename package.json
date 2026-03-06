@@ -1,0 +1,17 @@
+{
+  "name": "synx-syntax",
+  "version": "0.1.0",
+  "description": "SynX language toolkit: lexer, parser, transpiler, compiler, and VS Code support",
+  "main": "src/compiler.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node tests/run-tests.js && node tests/vscode-validator-tests.js",
+    "compile": "node bin/synxc.js examples/hello.synx",
+    "vscode:install": "cd vscode-synx && npm install",
+    "vscode:package": "cd vscode-synx && npm run package"
+  },
+  "bin": {
+    "synxc": "bin/synxc.js"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,60 @@
+{
+  "name": "synx-language-support",
+  "displayName": "SynX Language Support",
+  "description": "Syntax highlighting, snippets, diagnostics, and commands for SynX.",
+  "version": "0.0.2",
+  "publisher": "synx",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:synx",
+    "onCommand:synx.validateDocument"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "package": "npx @vscode/vsce package",
+    "publish": "npx @vscode/vsce publish"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "synx",
+        "aliases": [
+          "SynX",
+          "synx"
+        ],
+        "extensions": [
+          ".synx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "synx.validateDocument",
+        "title": "SynX: Validate Current Document"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "synx",
+        "scopeName": "source.synx",
+        "path": "./syntaxes/synx.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "synx",
+        "path": "./snippets/synx.code-snippets"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.6.2"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "synx-language-support",
+  "displayName": "SynX Language Support",
+  "description": "Syntax highlighting, snippets, and diagnostics scaffold for SynX.",
+  "version": "0.0.1",
+  "publisher": "synx",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:synx"],
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "synx",
+        "aliases": ["SynX", "synx"],
+        "extensions": [".synx"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "synx",
+        "scopeName": "source.synx",
+        "path": "./syntaxes/synx.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "synx",
+        "path": "./snippets/synx.code-snippets"
+      }
+    ]
+  }
+}

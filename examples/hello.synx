@@ -1,0 +1,5 @@
+set x = 1
+work add(a, b) {
+  export a + b
+}
+print(add(x, 2))
